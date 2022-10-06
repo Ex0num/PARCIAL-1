@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 @Component({
@@ -29,5 +29,31 @@ export class DetalleEntidadComponent implements OnInit {
   }
   
   ngOnInit(): void {}
+
+  repartidorSeleccionado:any;
+  // peliAfectada = false;
+
+  onRepartidorSeleccionado(event:any)
+  {
+    console.log("ME LLEGO EL EVENTO!!");
+    // console.log(event);
+    this.repartidorSeleccionado = event;
+  }
+
+  // peliculaAfectada(event:any)
+  // {
+  //   // console.log("ACCIONAR ME LLEGÓ!!!!");
+  //   // console.log(this.peliAfectada);
+  //   // console.log(event);
+    
+  //   if (this.peliAfectada == true)
+  //   {
+  //     this.peliAfectada = false;
+  //   }
+  //   else
+  //   {
+  //     this.peliAfectada = true;
+  //   }
+  // }
 
 }

@@ -87,6 +87,8 @@ export class SrvFirebaseService
       }
     });
 
+    this.leerDBRepartidores();
+
   }
 
   repartidoresDB: Entidad[] = [];
@@ -137,7 +139,7 @@ export class SrvFirebaseService
       //----------------------------------------------------------------
 
       // Add a new document with a generated id. (TENGO EN "DocRef" la referencia a ese usuario si me hiciese falta)
-      const docRef = await addDoc(collection(db, "Repartidor"), 
+      const docRef = await addDoc(collection(db, "Repartidores"), 
       {
         nombre: repartidor.nombre,
         dni: repartidor.dni,

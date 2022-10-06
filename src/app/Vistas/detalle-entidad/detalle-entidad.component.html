@@ -1,5 +1,5 @@
 <div  *ngIf="userLoged == true">
-    <app-listado-de-entidad></app-listado-de-entidad>
+    <app-listado-de-entidad (clickActor)="onRepartidorSeleccionado($event)"></app-listado-de-entidad>
 
 <div class="p-4 p-md-5 mb-4 rounded text-bg-dark" id="contenedor-absoluto">
 
@@ -7,22 +7,22 @@
         <div class="row">
 
             <div class="col-md-4" id="row1">
-                    <h1 class="display-4 fst-italic" id="titulo-principal">Detalles entidad</h1>
+                    <h1 class="display-4 fst-italic" id="titulo-principal">Detalles del repartidor</h1>
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                         <div class="col p-4 d-flex flex-column position-static">
                            
-                            <app-detalles-de-la-entidad></app-detalles-de-la-entidad>
+                            <app-detalles-de-la-entidad [repartidorClickeado] = "this.repartidorSeleccionado"></app-detalles-de-la-entidad>
                             
                         </div>
                     </div>
             </div>
             
             <div class="col-md-4" id="row2">
-                <h1 class="display-4 fst-italic" id="titulo-principal">Detalles pais de la entidad</h1>
+                <h1 class="display-4 fst-italic" id="titulo-principal">Detalles pais del repartidor</h1>
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         
-                            <app-detalles-del-pais></app-detalles-del-pais>
+                            <app-detalles-del-pais [repartidorClickeado] = "this.repartidorSeleccionado"></app-detalles-del-pais>
 
                     </div>
                 </div>
