@@ -1,0 +1,50 @@
+<div *ngIf="userLoged == true && isAdmin == true">
+    <!-- <app-tabla-pelicula [peliAfectada] = "this.peliAfectada" (peliculaSeleccionada)="onPeliSeleccionada($event)"></app-tabla-pelicula> -->
+    <app-listado-entidad2 [itemListadoAfectado] = "this.itemAfectado" (itemDelListadoClickeado)="onItemSeleccionado($event)"></app-listado-entidad2>
+
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark" id="contenedor-absoluto">
+
+        <div id="contenedor-peliculas">
+            <div class="row">
+
+                <div class="col-md-4" id="row1">
+                        <h1 class="display-4 fst-italic" id="titulo-principal">Crear</h1>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                            
+                                <!-- <app-eliminar-pelicula [peliClickeada] = "this.peliSeleccionada" (peliculaAfectada)="peliculaAfectada($event)"></app-eliminar-pelicula> -->
+                                <app-alta-entidad2></app-alta-entidad2>
+
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="col-md-4" id="row2">
+                    <h1 class="display-4 fst-italic" id="titulo-principal">Modificar</h1>
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            
+                            <!-- <app-detalle-pelicula [peliClickeada] = "this.peliSeleccionada" (peliculaAfectada)="peliculaAfectada($event)"></app-detalle-pelicula> -->
+                            <app-modificacion-entidad2 ></app-modificacion-entidad2>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" id="row3">
+                    <h1 class="display-4 fst-italic" id="titulo-principal">Eliminar</h1>
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+
+                            <!-- <app-modificar-pelicula [peliClickeada] = "this.peliSeleccionada" (peliculaAfectada)="peliculaAfectada($event)"></app-modificar-pelicula> -->
+                            <app-baja-entidad2></app-baja-entidad2>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

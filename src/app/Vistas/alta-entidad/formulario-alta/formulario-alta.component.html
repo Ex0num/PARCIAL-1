@@ -1,0 +1,42 @@
+<h1 class="display-4 fst-italic" id="titulo-principal">Alta entidad</h1>
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    
+    <div class="col p-4 d-flex flex-column position-static">
+
+        <form id="form-alta-actor">
+
+            <div class="row">
+                <div class="col g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <!-- <div class="mb-3"><input type="nombre" class="form-item" id="nombre" placeholder="Nombre" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"></div>                           -->
+                </div>
+
+                <div class="col g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <!-- <div class="mb-3"><input type="apellido" class="form-item" id="apellido" placeholder="Apellido" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}"></div>     -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <!-- <div class="mb-3"><input type="number" class="form-item" id="edad" placeholder="Edad" [(ngModel)]="edad" [ngModelOptions]="{standalone: true}"></div>                           -->
+                    <!-- <small class="invalid" *ngIf="forma.controls?.['comentario'].errors?.required && forma.controls?.['comentario'].touched">El comentario es requerido</small> -->
+                </div>
+               
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <!-- <input type="text"  class="form-item" readonly placeholder="País" [(ngModel)]="pais" [ngModelOptions]="{standalone: true}"> -->
+                </div>
+            </div>
+
+            <div class="mb-3"> 
+                <!-- <input type="radio" id="sexo-item1" name="sexo" value="masculino" checked>
+                <label>Masculino</label>
+                <input type="radio" id="sexo-item2" name="sexo" value="femenino">
+                <label>Femenino</label><br> -->
+            </div>
+
+            <small class="invalid" id="error-enviando" hidden>Hay errores en la encuesta</small>
+            <button id="btn-crear" (click)="crearEntidad()"> C R E A R </button>
+
+        </form>
+    </div>
+
+</div>

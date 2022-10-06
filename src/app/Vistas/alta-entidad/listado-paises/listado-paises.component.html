@@ -1,0 +1,8 @@
+<ul id="lista-paises">
+    <li class="pais-item" *ngFor="let pais of arrayPaises; let i = index" (click)="paisClickeadoEvent(pais)">
+            <p>
+                <label class="flag-pais"> {{arrayPaises[i]["flag"]}} </label>
+                <label class="nombre-pais">{{arrayPaises[i]["name"]["common"]}} </label>
+            </p>
+    </li>
+</ul>

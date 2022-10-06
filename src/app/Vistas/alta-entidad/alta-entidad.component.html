@@ -1,0 +1,21 @@
+<div class="p-4 p-md-5 mb-4 rounded text-bg-dark" id="contenedor-absoluto" *ngIf="userLoged == true">
+
+    <div class="row">
+
+        <div class="col-md-4" id="col1">
+           <app-formulario-alta [paisClickeado] = "this.pais"></app-formulario-alta>
+        </div>
+        
+        <div class="col-md-4" id="col2">
+            <h1 class="display-4 fst-italic" id="titulo-principal">Países</h1>
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="col-paises">
+                
+                <div class="col p-4 d-flex flex-column position-static">
+                    <app-listado-paises (paisClickeado)="paisClickeadoEvent($event)"></app-listado-paises>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

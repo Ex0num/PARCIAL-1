@@ -1,0 +1,66 @@
+#contenedor-absoluto
+{
+    margin-top: 4rem;
+    height: 28rem;
+}
+
+#col1
+{
+    text-align: center;
+    width: 68%;
+}
+
+.row
+{
+    margin-bottom: -1rem;
+}
+
+#col2
+{
+    text-align: center;
+    width: 32%;
+}
+
+#form-alta-actor
+{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.form-item
+{
+    width: 85%;
+    border-radius: 6px;
+    font-weight: 400;
+}
+
+
+#sexo-item2
+{
+    margin-left: 4rem;
+    margin-right: 0.3rem;
+}
+
+#sexo-item1
+{
+    margin-right: 2rem;
+    margin-right: 0.3rem;
+}
+
+#col-paises
+{
+    height: 17%;
+}
+
+#error-enviando
+{
+    margin-top: -10px;
+}
+
+.invalid
+{
+    color: red;
+    margin-left: 3px;
+}
