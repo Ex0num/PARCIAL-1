@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { AppComponent } from '../app.component';
+import { Entidad } from '../Entidades/entidad';
+import { Entidad2 } from '../Entidades/entidad2';
+import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,6 +21,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Create a root reference
+const db = getFirestore(app);
+const repartidores = collection(db, "Repartidores");
+// const peliculas = collection(db, "Peliculas"); 
 
 @Injectable({
   providedIn: 'root'
@@ -82,6 +89,9 @@ export class SrvFirebaseService
 
   }
 
+  repartidoresDB: Entidad[] = [];
+  // peliculasDB: Entidad2[] = [];
+
   logOut()
   {
     const auth = getAuth();
@@ -103,8 +113,45 @@ export class SrvFirebaseService
     this.router.navigate(["/login"],);
   }
 
+  async leerDBRepartidores() 
+  {
+    console.log("-------------------------------------");
+    console.log("REPARTIDORES LEIDOS DE LA DB:")
+
+    //Obtengo los documentos de forma asincronica, con un await. Por cada documento creo un usuario le asigno los datos y lo guardo
+    const querySnapshot = await getDocs(repartidores);
+    querySnapshot.forEach((doc) => 
+    {
+        // imprimo la data
+        console.log(doc.id, " => ", doc.data());
+
+        let repartidor = new Entidad(doc.data()['nombre'],doc.data()['dni'],doc.data()['edad'],doc.data()['capacidad'],doc.data()['pais'],doc.data()['unidadPropia']);
+        this.repartidoresDB.push(repartidor);
+    });
+  }
+
+  async agregarRepartidorDB(repartidor:Entidad)
+  {
+      //--------------- Guardo al repartidor en la DB ---------------------
+      this.repartidoresDB.push(repartidor);
+      //----------------------------------------------------------------
+
+      // Add a new document with a generated id. (TENGO EN "DocRef" la referencia a ese usuario si me hiciese falta)
+      const docRef = await addDoc(collection(db, "Repartidor"), 
+      {
+        nombre: repartidor.nombre,
+        dni: repartidor.dni,
+        edad: repartidor.edad,
+        capacidadTransporte: repartidor.capacidadDeTransporte,
+        pais: repartidor.pais,
+        unidadPropia: repartidor.unidadPropia
+      });
+      //-------------------------------------------------------------
+  }
+
   // navigateRegister()
   // {
   //   this.router.navigate(["/register"],);
   // }
 }
+

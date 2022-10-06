@@ -3,34 +3,43 @@
     
     <div class="col p-4 d-flex flex-column position-static">
 
-        <form id="form-alta-actor">
+        <form id="form-alta-repartidor" [formGroup]="forma" (ngSubmit)="crearEntidad()">
 
             <div class="row">
                 <div class="col g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <!-- <div class="mb-3"><input type="nombre" class="form-item" id="nombre" placeholder="Nombre" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"></div>                           -->
+                    <div class="mb-3"><input formControlName="nombre" type="nombre" class="form-item" id="nombre" placeholder="Nombre" [(ngModel)]="nombre"></div>                          
+                    <small class="invalid" *ngIf="forma.controls?.['nombre'].errors?.required && forma.controls?.['nombre'].touched">El nombre es requerido</small>
                 </div>
 
-                <div class="col g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <!-- <div class="mb-3"><input type="apellido" class="form-item" id="apellido" placeholder="Apellido" [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}"></div>     -->
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="mb-3"><input formControlName="edad" type="number" class="form-item" id="edad" placeholder="Edad" [(ngModel)]="edad"></div>                          
+                    <small class="invalid" *ngIf="forma.controls?.['edad'].errors?.required && forma.controls?.['edad'].touched">La edad es requerida</small>
+                </div> 
+            </div>
+
+            <div class="row">
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="mb-3"><input formControlName="dni"  type="number" class="form-item" id="dni" placeholder="DNI" [(ngModel)]="dni"></div>                          
+                    <small class="invalid" *ngIf="forma.controls?.['dni'].errors?.required && forma.controls?.['dni'].touched">El DNI es requerido</small>
+                </div>
+
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="mb-3"><input formControlName="capacidad" type="number" class="form-item" id="capacidad-transporte" placeholder="Capacidad de transporte" [(ngModel)]="capacidadDeTransporte"></div>                          
+                    <small class="invalid" *ngIf="forma.controls?.['capacidad'].errors?.required && forma.controls?.['capacidad'].touched">La capacidad es requerida</small>
+                </div>
+
+                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <input type="text"  class="form-item" readonly placeholder="País" [(ngModel)]="pais" [ngModelOptions]="{standalone: true}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <!-- <div class="mb-3"><input type="number" class="form-item" id="edad" placeholder="Edad" [(ngModel)]="edad" [ngModelOptions]="{standalone: true}"></div>                           -->
-                    <!-- <small class="invalid" *ngIf="forma.controls?.['comentario'].errors?.required && forma.controls?.['comentario'].touched">El comentario es requerido</small> -->
+                        <input type="radio" id="capacidad-item1" name="capacidad" value="masculino" checked>
+                        <label>Unidad propia</label>
+                        <input type="radio" id="capacidad-item2" name="capacidad" value="femenino">
+                        <label>Unidad ajena</label><br>
                 </div>
-               
-                <div class="col g-0  overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <!-- <input type="text"  class="form-item" readonly placeholder="País" [(ngModel)]="pais" [ngModelOptions]="{standalone: true}"> -->
-                </div>
-            </div>
-
-            <div class="mb-3"> 
-                <!-- <input type="radio" id="sexo-item1" name="sexo" value="masculino" checked>
-                <label>Masculino</label>
-                <input type="radio" id="sexo-item2" name="sexo" value="femenino">
-                <label>Femenino</label><br> -->
             </div>
 
             <small class="invalid" id="error-enviando" hidden>Hay errores en la encuesta</small>
