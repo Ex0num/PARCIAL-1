@@ -127,7 +127,7 @@ export class SrvFirebaseService
         // imprimo la data
         console.log(doc.id, " => ", doc.data());
 
-        let repartidor = new Entidad(doc.data()['nombre'],doc.data()['dni'],doc.data()['edad'],doc.data()['capacidad'],doc.data()['pais'],doc.data()['unidadPropia']);
+        let repartidor = new Entidad(doc.data()['nombre'],doc.data()['dni'],doc.data()['edad'],doc.data()['capacidadTransporte'],doc.data()['pais'],doc.data()['unidadPropia']);
         this.repartidoresDB.push(repartidor);
     });
   }
