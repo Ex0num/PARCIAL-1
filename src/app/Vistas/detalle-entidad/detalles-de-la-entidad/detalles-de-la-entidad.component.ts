@@ -46,6 +46,7 @@ export class DetallesDeLaEntidadComponent implements OnInit {
     //-- DATA ----------------------------------------------------------
     this.nombre = peliculaRecibida.nombre;
     this.edad = peliculaRecibida.edad;
+    console.log(peliculaRecibida.capacidadDeTransporte);
     this.capacidad = peliculaRecibida.capacidadDeTransporte;
     this.paisOrigen = peliculaRecibida.pais;
     this.unidadPropia = peliculaRecibida.unidadPropia;

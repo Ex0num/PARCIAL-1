@@ -40,6 +40,12 @@ export class DetallesDelPaisComponent implements OnInit {
   cargarDetallesPaisDelActorSeleccionado(actorSeleccionado:Entidad)
   {
     this.buscarDataPaisDelActor(actorSeleccionado.pais); 
+
+    let txtMensajeTemporal = document.getElementById("lbl-mensaje-temporal-detalle-2");
+    txtMensajeTemporal?.setAttribute("hidden","true");
+
+    let dataPais = document.getElementById("data-pais");
+    dataPais?.removeAttribute("hidden");
   }
 
   private buscarDataPaisDelActor(nombreComunPais:string)
@@ -56,4 +62,5 @@ export class DetallesDelPaisComponent implements OnInit {
 
     return pais;
   }
+
 }

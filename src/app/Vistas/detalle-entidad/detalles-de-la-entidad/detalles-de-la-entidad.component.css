@@ -1,0 +1,60 @@
+#col1-detalle
+{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    margin-right: 10%;
+}
+
+#data-pelicula-detalle
+{
+    margin-bottom: 1rem;
+}
+
+#row1-detalle
+{
+    text-align: center !important;
+}
+
+#lbl-titulo-detalle
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+#lbl-tipo-detalle, #lbl-fechaEstreno-detalle, #lbl-cantidadPublico-detalle,#lbl-descripcion-detalle, #lbl-edad-detalle
+{
+    padding-left: 0.3rem;
+}
+
+#row2-detalle, #row3-detalle,#row4-detalle, #row5-detalle, #row6-detalle, #lbl-edad-detalle
+{
+    font-size: 18px;
+    font-weight: 500;
+    color: cornflowerblue;
+    margin-left: 5px;
+}
+
+#btn-limpiar
+{
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: -1rem;
+    margin-bottom: -10rem;
+    background-color: #212529; 
+    color: white;
+    border:  1px solid white;
+}
+
+#lbl-mensaje-temporal-detalle
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
